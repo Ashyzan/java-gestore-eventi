@@ -8,7 +8,10 @@ public  class Evento {
 	private Date dataEvento;
 	private int numeroPostiTotale;
 	private static int numeroPostiPrenotati = 0;
+	private static int numeroPostiDisponibili;
 	
+	
+
 	// costruttore
 	public Evento(String titolo,  int numeroPostiTotale) {
 		super();
@@ -16,6 +19,7 @@ public  class Evento {
 		this.dataEvento = dataEvento;
 		this.numeroPostiTotale = numPositivo(numeroPostiTotale);
 		this.numeroPostiPrenotati = numeroPostiPrenotati;
+		this.numeroPostiDisponibili = numeroPostiTotale - numeroPostiPrenotati;
 	}
 	
 	// metodo che controlla che la data non sia già passata, ma solo futura
@@ -29,8 +33,11 @@ public  class Evento {
 	public int numPositivo(int numeroPosti) {
 		
 		if(numeroPosti < 0) {
-		
-			 System.out.println("ERRORE: Hai inserito un numero di posti inferiore a zero");
+			
+			System.out.println("ERRORE: Hai inserito un numero di posti inferiore a zero");
+			numeroPosti = 0;
+			Evento.setNumeroPostiTotale(0);
+			
 			
 		}
 		
@@ -42,18 +49,19 @@ public  class Evento {
 	public void prenota() {
 		
 		this.numeroPostiPrenotati = numeroPostiPrenotati + 1;
+		setNumeroPostiDisponibili(numeroPostiTotale - numeroPostiPrenotati);
 		// se la data è antecedente alla data evento da errore.
 		
 		// se i posti prenotati è maggiore di posti disponibili da errore.
 		if(numeroPostiPrenotati > numeroPostiTotale) {
 			
-			this.numeroPostiPrenotati = numeroPostiPrenotati;
+			this.numeroPostiPrenotati = numeroPostiTotale;
+			setNumeroPostiDisponibili(0);
 			
 			System.out.println("L'evento ha raggiunto la capienza massima" + "\n" +
 			"I posti totali sono " + numeroPostiTotale + "\n" + 
-					"I posti prenotati sono " + numeroPostiPrenotati);
-			
-			
+					"I posti prenotati sono " + numeroPostiPrenotati + "\n" +
+			"I posti disponibili sono " + numeroPostiDisponibili );	
 		}
 		
 		else {
@@ -65,13 +73,39 @@ public  class Evento {
 	
 	// METODO DISIDICI
 	
+	public void disdici() {
+		
+		this.numeroPostiPrenotati = numeroPostiPrenotati - 1;
+		setNumeroPostiDisponibili(numeroPostiTotale - numeroPostiPrenotati);
+		
+		// Se l’evento è già passato o non ci sono prenotazioni restituisce un messaggio di avviso.
+		if(numeroPostiPrenotati <= 0) {
+			
+			this.numeroPostiPrenotati = numeroPostiTotale;
+			setNumeroPostiDisponibili(numeroPostiTotale);
+			
+			System.out.println("L'evento non ha prenotazioni" + "\n" +
+			"I posti totali sono " + numeroPostiTotale + "\n" + 
+					"I posti prenotati sono " + numeroPostiPrenotati + "\n" + 
+					"I posti disponibili sono " + numeroPostiDisponibili);	
+		}
+		
+		else {
+			System.out.println("Hai disdetto correttamente la prenotazione " + "\n" + 
+		"I posti prenotati sono " + numeroPostiPrenotati + "\n"+
+		"I posti disponibili sono " + numeroPostiDisponibili);
+		}
+		
+	}
+	
 	// OVERRIDE METODO TOSTRING
 	
 	public String toString() {
 		
 		return "L'evento si intitola " + titolo + "\n" +
 		"Il numero di posti totale è " + numeroPostiTotale + "\n" + 
-				"Il numero di posti prenotati è " + numeroPostiPrenotati;
+				"Il numero di posti prenotati è " + numeroPostiPrenotati + "\n" + 
+				"I posti disponibili sono " + numeroPostiDisponibili;
 		
 		
 	}
@@ -112,5 +146,12 @@ public  class Evento {
 		this.numeroPostiPrenotati = numeroPostiPrenotati;
 	}
 	
+	private int getNumeroPostiDisponibili() {
+		return numeroPostiDisponibili;
+	}
+
+	private void setNumeroPostiDisponibili(int numeroPostiDisponibili) {
+		this.numeroPostiDisponibili = numeroPostiDisponibili;
+	}
 	
 }

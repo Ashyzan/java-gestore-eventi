@@ -5,36 +5,70 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		Evento concerto =  new Evento("Il mio concerto", 5);
+//		Evento concerto =  new Evento("Il mio concerto", 3);
+//		
+//		concerto.toString();
+//		
+//		System.out.println("   STAMPO ISTANZA CREATA    ********");
+//		System.out.println(concerto);
+//		
+//		concerto.prenota();
+//		
+//		System.out.println("    +1   ********");
+//		
+//		System.out.println(concerto);
+//		
+//		System.out.println("       ********");
+//		
+//		concerto.prenota();
+//		
+//		System.out.println("    +2   ********");
+//		
+//		System.out.println(concerto);
+//		
+//		System.out.println("       ********");
+//		
+//		concerto.prenota();
+//		
+//		System.out.println("   +3    ********");
+//		
+//		System.out.println(concerto);
+//		
+//		concerto.disdici();
+//		
+//		System.out.println("   -1    ********");
+//		
+//		System.out.println(concerto);
+//		
+//		System.out.println("       ********");
+//		
+//		concerto.disdici();
+//		
+//		System.out.println("  -2     ********");
+//		
+//		System.out.println(concerto);
+//		
+//		concerto.prenota();
+//		concerto.prenota();
+//		concerto.prenota();
+//		concerto.prenota();
+//		concerto.prenota();
+//		
+//		System.out.println(concerto);
+//		
+//		concerto.prenota();
+//		
+//		System.out.println(concerto);
+	
+	// ********************************+
 		
-		concerto.toString();
-		System.out.println(concerto);
-		System.out.println();
+		Evento mostra =  new Evento("La mia mostra", -5);
 		
-		concerto.prenota();
+		mostra.toString();
 		
-		System.out.println(concerto);
-		
-		System.out.println("       ********");
-		
-		concerto.prenota();
-		concerto.prenota();
-		concerto.prenota();
-		concerto.prenota();
-		concerto.prenota();
-		concerto.prenota();
-		concerto.prenota();
-		concerto.prenota();
-		
-		System.out.println("       ********");
-		
-		concerto.prenota();
-		
-		System.out.println("       ********");
-		
-		System.out.println(concerto);
-		
-		System.out.println("       ********");
+		System.out.println("   STAMPO ISTANZA CREATA    ********");
+		System.out.println(mostra);
+	
 	}
 
 }
