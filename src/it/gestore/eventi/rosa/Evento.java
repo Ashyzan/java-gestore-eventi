@@ -1,22 +1,27 @@
 package it.gestore.eventi.rosa;
 
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
 
 public  class Evento {
 
 	private String titolo;
-	private Date dataEvento;
+	private LocalDate currentDate = LocalDate.now(ZoneId.of("Europe/Paris"));
+	private LocalDate dataEvento; 
 	private int numeroPostiTotale;
 	private int numeroPostiPrenotati = 0;
 	private int numeroPostiDisponibili;
 	
-	
 
 	// costruttore
-	public Evento(String titolo,  int numeroPostiTotale) {
+	public Evento(String titolo,  int numeroPostiTotale, LocalDate dataEvento) {
 		super();
 		this.titolo = titolo;
-		this.dataEvento = dataEvento;
+		this.currentDate = currentDate;
+		this.dataEvento = controlloDataPassata(dataEvento);
 		this.numeroPostiDisponibili = numeroPostiTotale - numeroPostiPrenotati;
 		this.numeroPostiPrenotati = numeroPostiPrenotati;
 		this.numeroPostiTotale = numPositivo(numeroPostiTotale);
@@ -25,14 +30,21 @@ public  class Evento {
 	}
 	
 	// metodo che controlla che la data non sia già passata, ma solo futura
-	public void controlloDataPassata() {
+	public LocalDate controlloDataPassata(LocalDate dataEventoInserito) {
+		if(dataEvento.isBefore(currentDate))  {
+		    
+			System.out.println("ERRORE: la data dell'evento è antecedente alla data inserita (l'evento è già passato!");
 		
+		} 
+		
+		return dataEventoInserito;
+
 		
 	}
 	
 	// metodo che controlla che i posti totali sia un umero positivo.
 	
-	public int numPositivo(int numeroPosti) {
+	public final int numPositivo(int numeroPosti) {
 		
 		if(numeroPosti <= 0) {
 			
@@ -100,7 +112,7 @@ public  class Evento {
 	}
 	
 	// METODO PRENOTA piu prenotazioni alla vota
-	public void prenotazioniNumerose(int inputUtente) {
+	public final void prenotazioniNumerose(int inputUtente) {
 		
 		this.numeroPostiPrenotati = numeroPostiPrenotati + inputUtente;
 		setNumeroPostiDisponibili(numeroPostiTotale - numeroPostiPrenotati);
@@ -160,6 +172,7 @@ public  class Evento {
 	public String toString() {
 		
 		return "L'evento si intitola " + titolo + "\n" +
+		"La data dell'evento è " + dataEvento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))  + "\n" + 
 		"Il numero di posti totale è " + numeroPostiTotale + "\n" + 
 				"Il numero di posti prenotati è " + numeroPostiPrenotati + "\n" + 
 				"I posti disponibili sono " + numeroPostiDisponibili;
@@ -179,11 +192,12 @@ public  class Evento {
 		this.titolo = titolo;
 	}
 
-	public Date getDataEvento() {
+
+	private LocalDate getDataEvento() {
 		return dataEvento;
 	}
 
-	public void setDataEvento(Date dataEvento) {
+	private void setDataEvento(LocalDate dataEvento) {
 		this.dataEvento = dataEvento;
 	}
 
