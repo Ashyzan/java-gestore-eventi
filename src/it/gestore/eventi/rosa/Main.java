@@ -28,6 +28,7 @@ public class Main {
 
 		// il ciclo DO WHile mi consente di iterare più volte l'istruzione, finchè l'utente non inserisce correttamente i campi SI o NO.
 		// solo in quel caso il ciclo si interrompe.
+		// DO WHILE AGGIUNGI PRENOTAZIONI
 			int ciclo = 0;
 		    do {
 		    	System.out.println("Vuoi effettuare delle prenotazioni? Digita SI o NO");
@@ -65,6 +66,46 @@ public class Main {
 
 				}
 		    while ( ciclo < 2); 
+		    
+		    // DO WHILE DISDICI PRENOTAZIONI
+		    int ciclo2 = 0;
+		    do {
+		    	System.out.println("Vuoi disdire delle prenotazioni? Digita SI o NO");
+				Scanner input2 = new Scanner(System.in);
+				String prenota = input2.nextLine();
+		    
+							switch(prenota) {
+							
+							case "SI":
+								
+								System.out.println("Quanti posti vuoi disdire?");
+								
+								int numPrenotaz = input2.nextInt();
+								ConcertoGiannaNannini.disdetteNumerose(numPrenotaz);
+								
+								ciclo2 = 6;
+								break;
+							
+							case "NO":
+								
+								System.out.println("Ti ringraziamo per aver usato questo programma. FINE");
+								
+								ciclo2 = 6;
+								break;
+							
+							default: 
+								System.out.println("Inserimento non corretto");
+								
+								ciclo2 = 0;
+					
+							}
+							
+							
+						ciclo2++;
+
+				}
+		    
+		    while ( ciclo2 < 2); 
 		    
 		//System.out.println("La tua password è " + PasswordGeneratorOOP.generaPassword(ConcertoGiannaNannini));
 

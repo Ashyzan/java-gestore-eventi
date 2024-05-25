@@ -72,7 +72,7 @@ public  class Evento {
 		
 	}
 	
-	// METODO DISIDICI
+	// METODO DISIDICI una prenotazione alla volta
 	
 	public final void disdici() {
 		
@@ -99,9 +99,7 @@ public  class Evento {
 		
 	}
 	
-	// Metodo per indicare quanti posti si vogliono prenotare e prenotarli
-	
-	
+	// METODO PRENOTA piu prenotazioni alla vota
 	public void prenotazioniNumerose(int inputUtente) {
 		
 		this.numeroPostiPrenotati = numeroPostiPrenotati + inputUtente;
@@ -127,6 +125,35 @@ public  class Evento {
 		}
 		
 	}
+	
+	// METODO DISIDICI PIU PRENOTAZIONI
+	
+		public final void disdetteNumerose(int inputUtente2) {
+			
+			this.numeroPostiPrenotati = numeroPostiPrenotati - inputUtente2;
+			setNumeroPostiDisponibili(numeroPostiTotale - numeroPostiPrenotati);
+			
+			// Se l’evento è già passato o non ci sono prenotazioni restituisce un messaggio di avviso.
+			if(numeroPostiPrenotati <= 0) {
+				
+				this.numeroPostiPrenotati = numeroPostiTotale;
+				setNumeroPostiDisponibili(numeroPostiTotale);
+				
+				System.out.println("L'evento non ha prenotazioni" + "\n" +
+				"I posti totali sono " + numeroPostiTotale + "\n" + 
+						"I posti prenotati sono " + numeroPostiPrenotati + "\n" + 
+						"I posti disponibili sono " + numeroPostiDisponibili);	
+			}
+			
+			else {
+				System.out.println("Hai disdetto correttamente la prenotazione " + "\n" + 
+			"I posti prenotati sono " + numeroPostiPrenotati + "\n"+
+			"I posti disponibili sono " + numeroPostiDisponibili);
+			}
+			
+		}
+	
+	
 	
 	// OVERRIDE METODO TOSTRING
 	
