@@ -46,8 +46,8 @@ public  class Evento {
 	}
 	
 	// METODO PRENOTA: aggiunge uno ai posti prenotati. Se l’evento è già passato o non ha posti disponibili deve restituire un messaggio di avviso.
-	
-	public void prenota() {
+	// I metodi final impediscono l'ovveride
+	public final void prenota() {
 		
 		this.numeroPostiPrenotati = numeroPostiPrenotati + 1;
 		setNumeroPostiDisponibili(numeroPostiTotale - numeroPostiPrenotati);
@@ -74,7 +74,7 @@ public  class Evento {
 	
 	// METODO DISIDICI
 	
-	public void disdici() {
+	public final void disdici() {
 		
 		this.numeroPostiPrenotati = numeroPostiPrenotati - 1;
 		setNumeroPostiDisponibili(numeroPostiTotale - numeroPostiPrenotati);
@@ -95,6 +95,34 @@ public  class Evento {
 			System.out.println("Hai disdetto correttamente la prenotazione " + "\n" + 
 		"I posti prenotati sono " + numeroPostiPrenotati + "\n"+
 		"I posti disponibili sono " + numeroPostiDisponibili);
+		}
+		
+	}
+	
+	// Metodo per indicare quanti posti si vogliono prenotare e prenotarli
+	
+	
+	public void prenotazioniNumerose(int inputUtente) {
+		
+		this.numeroPostiPrenotati = numeroPostiPrenotati + inputUtente;
+		setNumeroPostiDisponibili(numeroPostiTotale - numeroPostiPrenotati);
+		// se la data è antecedente alla data evento da errore.
+		
+		// se i posti prenotati è maggiore di posti disponibili da errore.
+		if(numeroPostiPrenotati > numeroPostiTotale) {
+			
+			this.numeroPostiPrenotati = numeroPostiTotale;
+			setNumeroPostiDisponibili(0);
+			
+			System.out.println("L'evento ha raggiunto la capienza massima" + "\n" +
+			"I posti totali sono " + numeroPostiTotale + "\n" + 
+					"I posti prenotati sono " + numeroPostiPrenotati + "\n" +
+			"I posti disponibili sono " + numeroPostiDisponibili );	
+		}
+		
+		else {
+			System.out.println("Hai effettuato correttamente la prenotazione " + "\n" + 
+		"I posti prenotati sono " + numeroPostiPrenotati);
 		}
 		
 	}
