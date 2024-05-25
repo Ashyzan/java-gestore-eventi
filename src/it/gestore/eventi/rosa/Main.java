@@ -24,14 +24,17 @@ public class Main {
 		Evento ConcertoGiannaNannini = new Evento(titoloEventoGianna, numeroPostiEventoInseritidaUtente );
 		System.out.println(ConcertoGiannaNannini);
 		
+		
 		System.out.println("Vuoi effettuare delle prenotazioni? Digita SI o NO");
-		String prenota = input.nextLine();
+		Scanner input2 = new Scanner(System.in);
+		String prenota = input2.nextLine();
 		
 		
 		if (prenota.equals("SI")) {
 			
 			System.out.println("Quanti posti vuoi prenotare?");
-			int numPrenotaz = input.nextInt();
+			
+			int numPrenotaz = input2.nextInt();
 			ConcertoGiannaNannini.prenotazioniNumerose(numPrenotaz);
 			
 		}

@@ -122,7 +122,8 @@ public  class Evento {
 		
 		else {
 			System.out.println("Hai effettuato correttamente la prenotazione " + "\n" + 
-		"I posti prenotati sono " + numeroPostiPrenotati);
+		"I posti prenotati sono " + numeroPostiPrenotati + "\n" + 
+		"I posti disponibili sono " + numeroPostiDisponibili );
 		}
 		
 	}
