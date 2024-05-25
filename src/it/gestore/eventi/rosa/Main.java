@@ -29,26 +29,62 @@ public class Main {
 		Scanner input2 = new Scanner(System.in);
 		String prenota = input2.nextLine();
 		
+			
 		
-		if (prenota.equals("SI")) {
-			
-			System.out.println("Quanti posti vuoi prenotare?");
-			
-			int numPrenotaz = input2.nextInt();
-			ConcertoGiannaNannini.prenotazioniNumerose(numPrenotaz);
-			
-		}
+			boolean corretto = false;
 		
-		else if (prenota.equals("NO")) {
+				switch(corretto) {
+				
+				case false:
 			
-			System.out.println("Ti ringraziamo per aver usato questo programma. FINE");
-		}
+							switch(prenota) {
+							
+							case "SI":
+								
+								System.out.println("Quanti posti vuoi prenotare?");
+								
+								int numPrenotaz = input2.nextInt();
+								ConcertoGiannaNannini.prenotazioniNumerose(numPrenotaz);
+								corretto = true;
+								break;
+							
+							case "NO":
+								
+								System.out.println("Ti ringraziamo per aver usato questo programma. FINE");
+								corretto = true;
+								break;
+							
+							default: 
+								System.out.println("Inserimento non corretto");
+								corretto = false;
+					
+							}
+				default:
+					break;
+					
+				}
 		
-		else {
-			
-			System.out.println("Hai inserito un valore non corretto.");
-			
-		}
+		
+		
+//		if (prenota.equals("SI")) {
+//			
+//			System.out.println("Quanti posti vuoi prenotare?");
+//			
+//			int numPrenotaz = input2.nextInt();
+//			ConcertoGiannaNannini.prenotazioniNumerose(numPrenotaz);
+//			
+//		}
+//		
+//		else if (prenota.equals("NO")) {
+//			
+//			System.out.println("Ti ringraziamo per aver usato questo programma. FINE");
+//		}
+//		
+//		else {
+//			
+//			System.out.println("Hai inserito un valore non corretto.");
+//			
+//		}
 		//System.out.println("La tua password è " + PasswordGeneratorOOP.generaPassword(ConcertoGiannaNannini));
 
 	}
