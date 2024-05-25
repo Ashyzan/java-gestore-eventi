@@ -7,8 +7,8 @@ public  class Evento {
 	private String titolo;
 	private Date dataEvento;
 	private int numeroPostiTotale;
-	private static int numeroPostiPrenotati = 0;
-	private static int numeroPostiDisponibili;
+	private int numeroPostiPrenotati = 0;
+	private int numeroPostiDisponibili;
 	
 	
 
@@ -17,9 +17,11 @@ public  class Evento {
 		super();
 		this.titolo = titolo;
 		this.dataEvento = dataEvento;
-		this.numeroPostiTotale = numPositivo(numeroPostiTotale);
-		this.numeroPostiPrenotati = numeroPostiPrenotati;
 		this.numeroPostiDisponibili = numeroPostiTotale - numeroPostiPrenotati;
+		this.numeroPostiPrenotati = numeroPostiPrenotati;
+		this.numeroPostiTotale = numPositivo(numeroPostiTotale);
+		
+		
 	}
 	
 	// metodo che controlla che la data non sia già passata, ma solo futura
@@ -32,12 +34,11 @@ public  class Evento {
 	
 	public int numPositivo(int numeroPosti) {
 		
-		if(numeroPosti < 0) {
+		if(numeroPosti <= 0) {
 			
-			System.out.println("ERRORE: Hai inserito un numero di posti inferiore a zero");
+			System.out.println("ERRORE: devi inserire un numero positivo");
 			numeroPosti = 0;
-			Evento.setNumeroPostiTotale(0);
-			
+			setNumeroPostiDisponibili(numeroPostiTotale - numeroPostiPrenotati);
 			
 		}
 		
