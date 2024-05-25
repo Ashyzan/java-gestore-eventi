@@ -25,18 +25,15 @@ public class Main {
 		System.out.println(ConcertoGiannaNannini);
 		
 		
-		System.out.println("Vuoi effettuare delle prenotazioni? Digita SI o NO");
-		Scanner input2 = new Scanner(System.in);
-		String prenota = input2.nextLine();
-		
-			
-		
-			boolean corretto = false;
-		
-				switch(corretto) {
-				
-				case false:
-			
+
+		// il ciclo DO WHile mi consente di iterare più volte l'istruzione, finchè l'utente non inserisce correttamente i campi SI o NO.
+		// solo in quel caso il ciclo si interrompe.
+			int ciclo = 0;
+		    do {
+		    	System.out.println("Vuoi effettuare delle prenotazioni? Digita SI o NO");
+				Scanner input2 = new Scanner(System.in);
+				String prenota = input2.nextLine();
+		    
 							switch(prenota) {
 							
 							case "SI":
@@ -45,46 +42,30 @@ public class Main {
 								
 								int numPrenotaz = input2.nextInt();
 								ConcertoGiannaNannini.prenotazioniNumerose(numPrenotaz);
-								corretto = true;
+								
+								ciclo = 6;
 								break;
 							
 							case "NO":
 								
 								System.out.println("Ti ringraziamo per aver usato questo programma. FINE");
-								corretto = true;
+								
+								ciclo = 6;
 								break;
 							
 							default: 
 								System.out.println("Inserimento non corretto");
-								corretto = false;
+								
+								ciclo = 0;
 					
 							}
-				default:
-					break;
-					
+							
+							
+						ciclo++;
+
 				}
-		
-		
-		
-//		if (prenota.equals("SI")) {
-//			
-//			System.out.println("Quanti posti vuoi prenotare?");
-//			
-//			int numPrenotaz = input2.nextInt();
-//			ConcertoGiannaNannini.prenotazioniNumerose(numPrenotaz);
-//			
-//		}
-//		
-//		else if (prenota.equals("NO")) {
-//			
-//			System.out.println("Ti ringraziamo per aver usato questo programma. FINE");
-//		}
-//		
-//		else {
-//			
-//			System.out.println("Hai inserito un valore non corretto.");
-//			
-//		}
+		    while ( ciclo < 2); 
+		    
 		//System.out.println("La tua password è " + PasswordGeneratorOOP.generaPassword(ConcertoGiannaNannini));
 
 	}
