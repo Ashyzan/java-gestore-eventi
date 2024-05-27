@@ -30,7 +30,19 @@ public  class Evento {
 		
 	}
 	
-        
+       
+	// costruttore 2 per TEST Evento in maintest
+		public Evento(String titolo,  int numeroPostiTotale) {
+			super();
+			this.titolo = titolo;
+			this.currentDate = currentDate;
+			this.dataEvento = controlloDataPassata(dataEvento);
+			this.numeroPostiDisponibili = numeroPostiTotale - numeroPostiPrenotati;
+			this.numeroPostiPrenotati = numeroPostiPrenotati;
+			this.numeroPostiTotale = numPositivo(numeroPostiTotale);
+			
+			
+		}
     
 	
 	// metodo che controlla che la data non sia già passata, ma solo futura
