@@ -1,6 +1,7 @@
 package it.gestore.eventi.rosa;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -21,7 +22,8 @@ public class Main {
 		int numeroPostiEventoInseritidaUtente = input.nextInt();
 		
 		
-		LocalDate date = LocalDate.of(2024, 8, 8);
+		LocalDate date = LocalDate.of(2023, 11, 12);
+		
 		
 		// Creo l'oggetto utente a partire dagli input inseriti con scanner
 		Evento ConcertoGiannaNannini = new Evento(titoloEventoGianna, numeroPostiEventoInseritidaUtente, date);
@@ -108,4 +110,17 @@ public class Main {
 
 	}
 
+//	public void addDate() {
+//        Scanner scan = new Scanner(System.in);
+//        LocalDate ld = LocalDate.of(scan.nextInt(), scan.nextInt(), scan.nextInt());
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd. MM. yyyy");
+//        System.out.println(ld.format(dtf));
+//        scan.close();
+//        
+//    }
+	
+	
+
 }
+
+

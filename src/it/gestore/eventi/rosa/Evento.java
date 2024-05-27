@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 
 public  class Evento {
@@ -29,9 +30,12 @@ public  class Evento {
 		
 	}
 	
+        
+    
+	
 	// metodo che controlla che la data non sia già passata, ma solo futura
 	public LocalDate controlloDataPassata(LocalDate dataEventoInserito) {
-		if(dataEvento.isBefore(currentDate))  {
+		if(dataEventoInserito.isBefore(currentDate))  {
 		    
 			System.out.println("ERRORE: la data dell'evento è antecedente alla data inserita (l'evento è già passato!");
 		
