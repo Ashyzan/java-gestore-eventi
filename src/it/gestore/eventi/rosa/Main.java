@@ -1,5 +1,6 @@
 package it.gestore.eventi.rosa;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -19,8 +20,11 @@ public class Main {
 		System.out.println("Inserisci n. posti totali Evento");
 		int numeroPostiEventoInseritidaUtente = input.nextInt();
 		
+		
+		LocalDate date = LocalDate.of(2024, 8, 8);
+		
 		// Creo l'oggetto utente a partire dagli input inseriti con scanner
-		Evento ConcertoGiannaNannini = new Evento(titoloEventoGianna, numeroPostiEventoInseritidaUtente, 2024-08-15);
+		Evento ConcertoGiannaNannini = new Evento(titoloEventoGianna, numeroPostiEventoInseritidaUtente, date);
 		System.out.println(ConcertoGiannaNannini);
 
 		// il ciclo DO WHile mi consente di iterare più volte l'istruzione, finchè
