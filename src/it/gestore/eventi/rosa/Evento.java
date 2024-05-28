@@ -49,10 +49,10 @@ public  class Evento {
 	public LocalDate controlloDataPassata(LocalDate dataEventoInserito) {
 		if(dataEventoInserito.isBefore(currentDate))  {
 		    
-			System.out.println("ERRORE: la data dell'evento è antecedente alla data inserita (l'evento è già passato!");
+			System.out.println("ERRORE: la data dell'evento è antecedente alla data inserita (l'evento è già passato!)");
 		
 		} 
-		
+		System.exit(0); // se genera errore esce dal programma
 		return dataEventoInserito;
 
 		
@@ -64,7 +64,7 @@ public  class Evento {
 		
 		if(numeroPosti <= 0) {
 			
-			System.out.println("ERRORE: devi inserire un numero positivo");
+			System.out.println("ERRORE: devi inserire un numero positivo e maggiore di zero");
 			numeroPosti = 0;
 			setNumeroPostiDisponibili(numeroPostiTotale - numeroPostiPrenotati);
 			
@@ -181,14 +181,15 @@ public  class Evento {
 			
 		}
 	
-	
+
+		
 	
 	// OVERRIDE METODO TOSTRING
 	
 	public String toString() {
 		
 		return "L'evento si intitola " + titolo + "\n" +
-		"La data dell'evento è " + dataEvento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))  + "\n" + 
+		"La data dell'evento inserita è il " + dataEvento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))  + "\n" + 
 		"Il numero di posti totale è " + numeroPostiTotale + "\n" + 
 				"Il numero di posti prenotati è " + numeroPostiPrenotati + "\n" + 
 				"I posti disponibili sono " + numeroPostiDisponibili;

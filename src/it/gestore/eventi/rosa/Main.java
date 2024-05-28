@@ -22,11 +22,11 @@ public class Main {
 		int numeroPostiEventoInseritidaUtente = input.nextInt();
 		
 		
-		LocalDate date = LocalDate.of(2023, 11, 12);
+		LocalDate date = LocalDate.of(2024, 11, 12);
 		
 		
 		// Creo l'oggetto utente a partire dagli input inseriti con scanner
-		Evento ConcertoGiannaNannini = new Evento(titoloEventoGianna, numeroPostiEventoInseritidaUtente, date);
+		Evento ConcertoGiannaNannini = new Evento(titoloEventoGianna, numeroPostiEventoInseritidaUtente, addDate());
 		System.out.println(ConcertoGiannaNannini);
 
 		// il ciclo DO WHile mi consente di iterare più volte l'istruzione, finchè
@@ -110,15 +110,14 @@ public class Main {
 
 	}
 
-//	public void addDate() {
-//        Scanner scan = new Scanner(System.in);
-//        LocalDate ld = LocalDate.of(scan.nextInt(), scan.nextInt(), scan.nextInt());
-//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd. MM. yyyy");
-//        System.out.println(ld.format(dtf));
-//        scan.close();
-//        
-//    }
-	
+	// METODO AGGIUNGI DATA CON SCANNER (main)
+	public static LocalDate addDate() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Inserisci la data evento indicando anno (yyyy) mese (MM) giorno (dd)");
+        LocalDate dataUser = LocalDate.of(scan.nextInt(), scan.nextInt(), scan.nextInt());
+        return dataUser;
+        
+    }
 	
 
 }
