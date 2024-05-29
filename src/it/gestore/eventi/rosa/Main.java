@@ -1,6 +1,7 @@
 package it.gestore.eventi.rosa;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 		// apre il field per inserimento dati utente
 		System.out.println(
-				"Benvenuto nel programma EVENTI. Inserisci il nuovo evento avendo cura di inserire TITOLO, N. POSTI TOTALI, DATA");
+				"Benvenuto nel programma EVENTI. Inserisci il nuovo evento avendo cura di inserire i dati richiesti ");
 
 		// Titolo evento inserito dall'utente
 		System.out.println("Inserisci il Titolo dell'evento");
@@ -26,7 +27,7 @@ public class Main {
 		
 		
 		// Creo l'oggetto utente a partire dagli input inseriti con scanner
-		Evento ConcertoGiannaNannini = new Evento(titoloEventoGianna, numeroPostiEventoInseritidaUtente, addDate());
+		Concerto ConcertoGiannaNannini = new Concerto(titoloEventoGianna, numeroPostiEventoInseritidaUtente, addDate(), addTime());
 		System.out.println(ConcertoGiannaNannini);
 
 		// il ciclo DO WHile mi consente di iterare più volte l'istruzione, finchè
@@ -36,8 +37,8 @@ public class Main {
 		int ciclo = 0;
 		do {
 			System.out.println("Vuoi effettuare delle prenotazioni? Digita SI o NO");
-			Scanner input2 = new Scanner(System.in);
-			String prenota = input2.nextLine();
+			Scanner inputPrenota = new Scanner(System.in);
+			String prenota = inputPrenota.nextLine();
 
 			switch (prenota) {
 
@@ -45,7 +46,7 @@ public class Main {
 
 				System.out.println("Quanti posti vuoi prenotare?");
 
-				int numPrenotaz = input2.nextInt();
+				int numPrenotaz = inputPrenota.nextInt();
 				ConcertoGiannaNannini.prenotazioniNumerose(numPrenotaz);
 
 				ciclo = 6;
@@ -73,8 +74,8 @@ public class Main {
 		int ciclo2 = 0;
 		do {
 			System.out.println("Vuoi disdire delle prenotazioni? Digita SI o NO");
-			Scanner input2 = new Scanner(System.in);
-			String prenota = input2.nextLine();
+			Scanner inputDisdetta = new Scanner(System.in);
+			String prenota = inputDisdetta.nextLine();
 
 			switch (prenota) {
 
@@ -82,7 +83,7 @@ public class Main {
 
 				System.out.println("Quanti posti vuoi disdire?");
 
-				int numPrenotaz = input2.nextInt();
+				int numPrenotaz = inputDisdetta.nextInt();
 				ConcertoGiannaNannini.disdetteNumerose(numPrenotaz);
 
 				ciclo2 = 6;
@@ -112,10 +113,36 @@ public class Main {
 
 	// METODO AGGIUNGI DATA CON SCANNER (main)
 	public static LocalDate addDate() {
-        Scanner scan = new Scanner(System.in);
+        Scanner scanData = new Scanner(System.in);
+        
+//        boolean anno = false;
+//        boolean mese = false;
+//        boolean giorno = false;
+        
         System.out.println("Inserisci la data evento indicando anno (yyyy) mese (MM) giorno (dd)");
-        LocalDate dataUser = LocalDate.of(scan.nextInt(), scan.nextInt(), scan.nextInt());
+        LocalDate dataUser = LocalDate.of(scanData.nextInt(), scanData.nextInt(), scanData.nextInt());
+        
+//        if (anno) {
+//        	
+//        	System.out.println("hai inserito un anno non valido");
+//        	
+//        }
+//        
+        
         return dataUser;
+        
+    }
+	
+	// METODO AGGIUNGI ORARIO CON SCANNER (main)
+	public static LocalTime addTime() {
+        Scanner scanTempo = new Scanner(System.in);
+    
+        
+        System.out.println("Inserisci l'ora dell'evento formato HH e MM");
+        LocalTime timeUser = LocalTime.of(scanTempo.nextInt(), scanTempo.nextInt());
+          
+        
+        return timeUser;
         
     }
 	
