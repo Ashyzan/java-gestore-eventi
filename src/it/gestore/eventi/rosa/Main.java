@@ -22,8 +22,11 @@ public class Main {
 		System.out.println("Inserisci n. posti totali Evento");
 		int numeroPostiEventoInseritidaUtente = input.nextInt();
 		
-		LocalDate date = LocalDate.of(2024, 11, 12);
-		LocalTime time = LocalTime.of(10, 33);
+//		LocalDate date = LocalDate.of(2024, 11, 12);
+//		LocalTime time = LocalTime.of(10, 33);
+		
+		System.out.println("Inserisci il prezzo (separa i decimali con virgola) ");
+		double prezzoUtente = input.nextDouble();
 		
 //		System.out.println(date);
 //		System.out.println(time);
@@ -31,7 +34,7 @@ public class Main {
 		// Creo l'oggetto utente a partire dagli input inseriti con scanner
 //		Evento Concertotest = new Evento ("test", 44 , date);
 //		System.out.println(Concertotest);
-		Concerto ConcertoGiannaNannini = new Concerto(titoloEventoGianna, numeroPostiEventoInseritidaUtente, addDate2(), addTime());
+		Concerto ConcertoGiannaNannini = new Concerto(titoloEventoGianna, numeroPostiEventoInseritidaUtente, addDate2(), addTime(), prezzoUtente);
 		
 		System.out.println(ConcertoGiannaNannini);
 

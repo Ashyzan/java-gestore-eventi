@@ -12,9 +12,10 @@ public class Concerto extends Evento {
 	private double prezzo;
 	
 	
-	public Concerto(String titolo, int numeroPostiTotale, LocalDate dataEvento, LocalTime orarioEvento) {
+	public Concerto(String titolo, int numeroPostiTotale, LocalDate dataEvento, LocalTime orarioEvento , double prezzo) {
 		super(titolo, numeroPostiTotale, dataEvento);
 		this.orario = orarioEvento;
+		this.prezzo = prezzo;
 	}
 	
 	// OVERRIDE METODO TOSTRING
@@ -22,9 +23,14 @@ public class Concerto extends Evento {
 		public String toString() {
 			
 			return super.toString() + "\n" +
-					"L'orario dell'evento è " + orario.format(DateTimeFormatter.ofPattern("HH:mm")) + "\n";
+					"L'orario dell'evento è " + orario.format(DateTimeFormatter.ofPattern("HH:mm")) + "\n" +
+					"Il prezzo è " + String.format("%.2f €", prezzo);
+			
+			
 			
 		}
+		
+
 
 
 
@@ -34,6 +40,14 @@ public class Concerto extends Evento {
 
 		public void setOrario(LocalTime orario) {
 			this.orario = orario;
+		}
+
+		public double getPrezzo() {
+			return prezzo;
+		}
+
+		public void setPrezzo(double prezzo) {
+			this.prezzo = prezzo;
 		}
 		
 		
