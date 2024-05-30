@@ -18,7 +18,7 @@ public class ProgrammaEventi {
 		}
 		
 		public void addEvento(Evento evento) {
-			NewEventiList.add(evento);
+			evento.add(evento);
 		}
 	// METODI DA IMPLEMENTARE
 		
