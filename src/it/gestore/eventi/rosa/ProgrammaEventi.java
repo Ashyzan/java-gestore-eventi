@@ -6,17 +6,20 @@ import java.util.List;
 public class ProgrammaEventi {
 	
 	private String titoloProgEventi;
-	private List<Evento> Eventi;
+	private List<Evento> eventi; // creo una lista di Oggetti Evento
 	
 	// costruttore PROGRAMMA EVENTI
 	
 	public ProgrammaEventi(String Titolo) {
 		this.titoloProgEventi = Titolo;
-		List<Evento> NewEventiList = new ArrayList<Evento>();
+		this.eventi = eventi;
+		List<Evento> NewEventiList = new ArrayList<Evento>(eventi);
 		
 		}
 		
-		
+		public void addEvento(Evento evento) {
+			NewEventiList.add(evento);
+		}
 	// METODI DA IMPLEMENTARE
 		
 //	1	un metodo che aggiunge alla lista un Evento, passato come parametro
