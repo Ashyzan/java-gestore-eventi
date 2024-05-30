@@ -22,12 +22,17 @@ public class Main {
 		System.out.println("Inserisci n. posti totali Evento");
 		int numeroPostiEventoInseritidaUtente = input.nextInt();
 		
-		
 		LocalDate date = LocalDate.of(2024, 11, 12);
+		LocalTime time = LocalTime.of(10, 33);
 		
+//		System.out.println(date);
+//		System.out.println(time);
 		
 		// Creo l'oggetto utente a partire dagli input inseriti con scanner
-		Concerto ConcertoGiannaNannini = new Concerto(titoloEventoGianna, numeroPostiEventoInseritidaUtente, addDate(), addTime());
+//		Evento Concertotest = new Evento ("test", 44 , date);
+//		System.out.println(Concertotest);
+		Concerto ConcertoGiannaNannini = new Concerto(titoloEventoGianna, numeroPostiEventoInseritidaUtente, addDate2(), addTime());
+		
 		System.out.println(ConcertoGiannaNannini);
 
 		// il ciclo DO WHile mi consente di iterare più volte l'istruzione, finchè
@@ -111,25 +116,42 @@ public class Main {
 
 	}
 
-	// METODO AGGIUNGI DATA CON SCANNER (main)
-	public static LocalDate addDate() {
-        Scanner scanData = new Scanner(System.in);
-        
-//        boolean anno = false;
-//        boolean mese = false;
-//        boolean giorno = false;
-        
-        System.out.println("Inserisci la data evento indicando anno (yyyy) mese (MM) giorno (dd)");
-        LocalDate dataUser = LocalDate.of(scanData.nextInt(), scanData.nextInt(), scanData.nextInt());
-        
-//        if (anno) {
-//        	
-//        	System.out.println("hai inserito un anno non valido");
-//        	
-//        }
+//	// METODO AGGIUNGI DATA CON SCANNER (main)
+//	public static LocalDate addDate() {
+//        Scanner scanData = new Scanner(System.in);
 //        
+////        boolean anno = false;
+////        boolean mese = false;
+////        boolean giorno = false;
+//        
+//        System.out.println("Inserisci la data evento indicando anno (yyyy) mese (MM) giorno (dd)");
+//        LocalDate dataUser = LocalDate.of(scanData.nextInt(), scanData.nextInt(), scanData.nextInt());
+//        
+////        if (anno) {
+////        	
+////        	System.out.println("hai inserito un anno non valido");
+////        	
+////        }
+////        
+//        
+//        return dataUser;
+//        
+//    }
+	
+	// METODO AGGIUNGI DATA CON SCANNER2 (main)
+	public static LocalDate addDate2() {
+        Scanner scanData2 = new Scanner(System.in);
         
-        return dataUser;
+        System.out.print("Inserisci la data dell'evento (dd/mm/yyyy): ");
+        
+        String dateStr = scanData2.nextLine();
+        
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
+	    LocalDate data = LocalDate.parse(dateStr, formatter); 
+
+       // LocalDate dataUser = LocalDate.of(scanData.nextInt(), scanData.nextInt(), scanData.nextInt());
+        
+        return data;
         
     }
 	
@@ -138,9 +160,12 @@ public class Main {
         Scanner scanTempo = new Scanner(System.in);
     
         
-        System.out.println("Inserisci l'ora dell'evento formato HH e MM");
-        LocalTime timeUser = LocalTime.of(scanTempo.nextInt(), scanTempo.nextInt());
-          
+        System.out.println("Inserisci l'ora dell'evento (HH:mm)");
+       // LocalTime timeUser = LocalTime.of(scanTempo.nextInt(), scanTempo.nextInt());
+        String timeStr = scanTempo.nextLine();
+        
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");  
+	    LocalTime timeUser = LocalTime.parse(timeStr, formatter);  
         
         return timeUser;
         

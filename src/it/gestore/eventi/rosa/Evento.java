@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 
-public abstract class Evento {
+public  class Evento {
 
 	private String titolo;
 	private LocalDate currentDate = LocalDate.now(ZoneId.of("Europe/Paris"));
@@ -49,9 +49,9 @@ public abstract class Evento {
 		if(dataEventoInserito.isBefore(currentDate))  {
 		    
 			System.out.println("ERRORE: la data dell'evento è antecedente alla data inserita (l'evento è già passato!)");
-		
+			System.exit(0); // se genera errore stoppa il programma
 		} 
-		System.exit(0); // se genera erro
+		
 		return dataEventoInserito;
 
 		
