@@ -1,5 +1,7 @@
 package it.gestore.eventi.rosa;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +14,16 @@ public class ProgrammaEventi {
 	
 	public ProgrammaEventi(String Titolo) {
 		this.titoloProgEventi = Titolo;
-		this.eventi = eventi;
-		List<Evento> NewEventiList = new ArrayList<Evento>(eventi);
+		this.eventi = eventi; //istanzio la ista nel costruttore
+		System.out.println("Ho creato un nuovo programma eventi");
+		
 		
 		}
 		
-		public void addEvento(Evento evento) {
-			evento.add(evento);
+		public void addEvento(Evento evento ) {
+			this.eventi.add(new Concerto ("Concerto 1"));
+			System.out.println("Ho aggiunto un nuovo evento a programma eventi" );
+			
 		}
 	// METODI DA IMPLEMENTARE
 		
@@ -30,6 +35,4 @@ public class ProgrammaEventi {
 //		data1 - titolo1
 //		data2 - titolo2 
 		
-		
-
 }

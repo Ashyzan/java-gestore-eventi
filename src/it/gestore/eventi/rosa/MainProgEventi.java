@@ -7,28 +7,38 @@ import java.util.List;
 
 public class MainProgEventi {
 
-	public static void main(String[] args) {
+	public static void main(String[] args, Object Evento) {
 		
+		// esercizi sulle liste //
+//		LocalDate date = LocalDate.of(2024, 11, 12);
+//		LocalTime time = LocalTime.of(10, 33);
 		
+		Concerto ConcertoGiorgia = new Concerto ("Giorgia in concerto");
 		
-		LocalDate date = LocalDate.of(2024, 11, 12);
-		LocalTime time = LocalTime.of(10, 33);
+		Concerto ConcertoMannoia = new Concerto ("Mannoia in concerto");
 		
-		Evento ConcertoGiorgia = new Concerto ("Giorgia in concerto" , 300, date, time, 120 );
+		Concerto ConcertoMannarino = new Concerto ("Mannarino in concerto");
 		
-		Evento ConcertoMannoia = new Concerto ("Mannoia in concerto" , 300, date, time, 120);
+		List <Concerto> ListaConcerti = new ArrayList<>();
 		
-		Evento ConcertoMannarino = new Concerto ("Mannarino in concerto" , 300, date, time, 120);
+		ListaConcerti.add(ConcertoGiorgia);
+		
+		ListaConcerti.add(ConcertoMannoia);
+		
+		ListaConcerti.add(ConcertoMannarino);
+		
+		System.out.println("Stampo la lista Concerti " + ListaConcerti);
+		
+		System.out.println("******   *********  FINE ESERCIZI SULLE LISTE **********");
 		
 		List<ProgrammaEventi> eventiSummer24 = new ArrayList<ProgrammaEventi>();
 		
-		eventiSummer24.addAll(ConcertoGiorgia);
-		eventiSummer24.addAll(ConcertoMannoia);
-		eventiSummer24.addAll(ConcertoMannarino);
-		
+		//eventiSummer24.addEvento(ConcertoMannarino);
+		//eventiSummer24.addEvento(ConcertoGiorgia);
 
 		System.out.println("Stampo la lista Eventi " + eventiSummer24);
 		
+
 
 	}
 

@@ -18,6 +18,11 @@ public class Concerto extends Evento {
 		this.prezzo = prezzo;
 	}
 	
+	public Concerto (String titolo) {
+		super(titolo);
+		
+	}
+	
 	
 	
 	// OVERRIDE METODO TOSTRING

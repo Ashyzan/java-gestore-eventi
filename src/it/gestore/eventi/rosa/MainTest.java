@@ -7,7 +7,7 @@ public class MainTest {
 		
 		Evento concerto =  new Evento("Il mio concerto", 3);
 		
-		concerto.toString();
+		//concerto.toString();
 		
 		System.out.println("   STAMPO ISTANZA CREATA    ********");
 		System.out.println(concerto);
@@ -64,7 +64,7 @@ public class MainTest {
 		
 		Evento mostra =  new Evento("La mia mostra", -3);
 		
-		mostra.toString();
+		//mostra.toString();
 		
 		System.out.println("   STAMPO ISTANZA CREATA    ********");
 		System.out.println(mostra);

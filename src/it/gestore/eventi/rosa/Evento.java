@@ -29,7 +29,19 @@ public  class Evento {
 		
 	}
 	
-       
+	// costruttore con un solo parametro
+	public Evento(String titolo) {
+		this.titolo = titolo;
+		
+	}
+	
+	// costruttore con 2  parametri
+		public Evento(String titolo, int numeroPostiTotale) {
+			this.titolo = titolo;
+			this.numeroPostiTotale = numPositivo(numeroPostiTotale);
+			
+		}
+	
 //	// costruttore 2 per TEST Evento in maintest
 //		public Evento(String titolo,  int numeroPostiTotale) {
 //			this.titolo = titolo;
@@ -185,17 +197,24 @@ public  class Evento {
 	
 	// OVERRIDE METODO TOSTRING
 	
-	public String toString() {
+//	public String toString() {
+//		
+//		return "L'evento si intitola " + titolo + "\n" +
+//		"La data dell'evento inserita è il " + dataEvento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))  + "\n" + 
+//		"Il numero di posti totale è " + numeroPostiTotale + "\n" + 
+//				"Il numero di posti prenotati è " + numeroPostiPrenotati + "\n" + 
+//				"I posti disponibili sono " + numeroPostiDisponibili;
+//		
+//		
+//	}
+	
+public String toString1() {
 		
-		return "L'evento si intitola " + titolo + "\n" +
-		"La data dell'evento inserita è il " + dataEvento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))  + "\n" + 
-		"Il numero di posti totale è " + numeroPostiTotale + "\n" + 
-				"Il numero di posti prenotati è " + numeroPostiPrenotati + "\n" + 
-				"I posti disponibili sono " + numeroPostiDisponibili;
+		return "L'evento si intitola " + titolo;
+				
 		
 		
 	}
-	
 	
 	
 	// GETTER E SETTER
