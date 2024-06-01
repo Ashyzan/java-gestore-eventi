@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 
-public  class Evento {
+public  class Evento implements Comparable<Evento>{
 
 	private String titolo;
 	private LocalDate currentDate = LocalDate.now(ZoneId.of("Europe/Paris"));
@@ -66,7 +66,6 @@ public  class Evento {
 		
 		return dataEventoInserito;
 
-		
 	}
 	
 	// metodo che controlla che i posti totali sia un umero positivo.
@@ -193,6 +192,20 @@ public  class Evento {
 		}
 	
 
+		@Override
+		public int compareTo(Evento eventoInput) {
+			if(dataEvento.isBefore(eventoInput.dataEvento))  {
+			
+				return -1;
+			} 
+			
+			else if (eventoInput.dataEvento.isBefore(dataEvento)) {
+				return +1;
+			}
+			
+			return 0;
+		}
+		
 		
 	
 	// OVERRIDE METODO TOSTRING
