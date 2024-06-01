@@ -10,29 +10,54 @@ public class ProgrammaEventi {
 	private String titoloProgEventi;
 	private List<Evento> eventi; // creo una lista di Oggetti Evento
 	
-	// costruttore PROGRAMMA EVENTI
+// costruttore PROGRAMMA EVENTI
 	
 	public ProgrammaEventi(String Titolo) {
 		this.titoloProgEventi = Titolo;
-		this.eventi = eventi; //istanzio la ista nel costruttore
-		System.out.println("Ho creato un nuovo programma eventi");
+		List<Evento> listaEvento1 = new ArrayList<>();
+		this.eventi = listaEvento1; //istanzio la ista nel costruttore
+		System.out.println("Ho creato un nuovo programma eventi dal titolo " + Titolo);
 		
 		
 		}
 		
+// metodo che aggiunge un evento alla lista
 		public void addEvento(Evento evento ) {
-			this.eventi.add(new Concerto ("Concerto 1"));
+			this.eventi.add(evento);
 			System.out.println("Ho aggiunto un nuovo evento a programma eventi" );
 			
 		}
-	// METODI DA IMPLEMENTARE
 		
-//	1	un metodo che aggiunge alla lista un Evento, passato come parametro
-//	2	un metodo che restituisce una lista con tutti gli eventi presenti in una certa data
-//	3	un metodo che restituisce quanti eventi sono presenti nel programma
-//	4	un metodo che svuota la lista di eventi
-//	5	un metodo che restituisce una stringa che mostra il titolo del programma e tutti gli eventi ordinati per data nella forma: 
-//		data1 - titolo1
-//		data2 - titolo2 
+//metodo che restituisce una lista con tutti gli eventi presenti in una certa data
+		public void filtraPerData() {
+			
+		}
 		
+//metodo che restituisce quanti eventi sono presenti nel programma
+		public void numeroEventiTotale() {
+			int size = this.eventi.size();
+			System.out.println("La lista contiene " + size + " elementi");
+		}
+		
+		
+// metodo che svuota la lista di eventi
+		public void svuotaLista() {
+			this.eventi.clear();
+			System.out.println("Ho svuotato la lista" );
+			
+		}
+		
+//		metodo che restituisce una stringa che mostra il titolo del programma e tutti gli eventi ordinati per data nella forma: 
+//			data1 - titolo1
+//			data2 - titolo2 
+		public void sortLista() {
+			
+			
+		}
+		
+		public String toString() {
+			return "Il programma si chiama " + titoloProgEventi + "\n"
+					+ "sono presenti ..." ;
+		}
+
 }

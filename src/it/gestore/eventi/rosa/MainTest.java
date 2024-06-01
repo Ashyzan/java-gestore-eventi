@@ -1,5 +1,8 @@
 package it.gestore.eventi.rosa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainTest {
 
 	public static void main(String[] args) {
@@ -69,6 +72,9 @@ public class MainTest {
 		System.out.println("   STAMPO ISTANZA CREATA    ********");
 		System.out.println(mostra);
 	
+		
+	
+		
 	}
 
 }

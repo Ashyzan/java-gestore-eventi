@@ -18,10 +18,10 @@ public class Concerto extends Evento {
 		this.prezzo = prezzo;
 	}
 	
-	public Concerto (String titolo) {
-		super(titolo);
-		
-	}
+//	public Concerto (String titolo) {
+//		super(titolo);
+//		
+//	}
 	
 	
 	
@@ -29,17 +29,14 @@ public class Concerto extends Evento {
 	
 		public String toString() {
 			
-			return super.toString() + "\n" +
-					"L'orario dell'evento è " + orario.format(DateTimeFormatter.ofPattern("HH:mm")) + "\n" +
-					"Il prezzo è " + String.format("%.2f €", prezzo);
+			return super.toString() + "\n" 
+			+ "L'orario dell'evento è " + orario.format(DateTimeFormatter.ofPattern("HH:mm")) + "\n" 
+					+ "Il prezzo è " + String.format("%.2f €", prezzo);
 			
 			
 			
 		}
 		
-
-
-
 
 		public LocalTime getOrario() {
 			return orario;
