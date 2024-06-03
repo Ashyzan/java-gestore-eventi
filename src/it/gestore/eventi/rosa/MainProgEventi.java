@@ -33,7 +33,7 @@ public class MainProgEventi {
 		
 		Collections.sort(ListaConcerti);
 		
-		System.out.println("Stampo la lista Concerti " + ListaConcerti);
+		//System.out.println("Stampo la lista Concerti " + ListaConcerti);
 		
 		//System.out.println("******   *********  FINE ESERCIZI SULLE LISTE **********");
 		
@@ -48,10 +48,13 @@ public class MainProgEventi {
 		 
 		 summer24.sortData();
 		 
-		 System.out.println("Stampo la lista Eventi " + summer24);
+		 summer24.stampoLista();
 		 
-		 summer24.svuotaLista();
-		 summer24.numeroEventiTotale();
+		 summer24.filtraPerData(date2);
+		 
+		 
+//		 summer24.svuotaLista();
+//		 summer24.numeroEventiTotale();
 		 
 
 	}

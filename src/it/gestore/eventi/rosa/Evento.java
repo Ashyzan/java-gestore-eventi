@@ -235,11 +235,11 @@ public  class Evento implements Comparable<Evento>{
 	}
 
 
-	private LocalDate getDataEvento() {
+	public LocalDate getDataEvento() {
 		return dataEvento;
 	}
 
-	private void setDataEvento(LocalDate dataEvento) {
+	public void setDataEvento(LocalDate dataEvento) {
 		this.dataEvento = dataEvento;
 	}
 
